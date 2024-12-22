@@ -1,4 +1,4 @@
-import 'package:dart_ip/foundation.dart';
+import 'package:better_dart_ip/foundation.dart';
 import 'package:test/test.dart';
 
 void main() {

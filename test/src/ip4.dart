@@ -1,7 +1,7 @@
 import 'dart:typed_data';
 
-import 'package:dart_ip/ip.dart';
-import 'package:dart_ip/udp.dart';
+import 'package:better_dart_ip/ip.dart';
+import 'package:better_dart_ip/udp.dart';
 import 'package:dart_raw/raw.dart';
 import 'package:dart_raw/test_helpers.dart';
 import 'package:test/test.dart';

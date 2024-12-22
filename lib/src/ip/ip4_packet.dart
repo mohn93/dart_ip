@@ -1,10 +1,9 @@
 import 'dart:typed_data';
 
-import 'package:dart_ip/foundation.dart';
-import 'package:dart_ip/ip.dart';
+import 'package:better_dart_ip/foundation.dart';
+import 'package:better_dart_ip/ip.dart';
 import 'package:dart_raw/raw.dart';
 
-import 'ip4_address.dart';
 
 const Protocol ipv4 = Protocol('IPv4');
 

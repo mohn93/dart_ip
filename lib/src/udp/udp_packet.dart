@@ -1,5 +1,5 @@
-import 'package:dart_ip/foundation.dart';
-import 'package:dart_ip/ip.dart';
+import 'package:better_dart_ip/foundation.dart';
+import 'package:better_dart_ip/ip.dart';
 import 'package:dart_raw/raw.dart';
 
 const Protocol udp = Protocol(
@@ -34,12 +34,12 @@ class UdpPacket extends IpPayload {
   Protocol get protocol => udp;
 
   @override
-  operator ==(other) {
+  bool operator ==(other) {
     if (other is UdpPacket &&
         sourcePort == other.sourcePort &&
         destinationPort == other.destinationPort &&
         payload == other.payload) {
-      final parent = this.parentPacket;
+      final parent = parentPacket;
       final otherParent = other.parentPacket;
       if (parent == null) {
         return otherParent == null;
@@ -114,8 +114,8 @@ class UdpPacket extends IpPayload {
     // ------------------
     // Calculate checksum
     // ------------------
-    int checksum = 0;
-    final ipPacket = this.parentPacket;
+    var checksum = 0;
+    final ipPacket = parentPacket;
     final ipPacketPayloadLength = writer.length - start;
     if (ipPacket is Ip4Packet) {
       checksum += ipPacket.source.asUint32;

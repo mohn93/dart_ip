@@ -1,5 +1,5 @@
-import 'package:dart_ip/foundation.dart';
-import 'package:dart_ip/ip.dart';
+import 'package:better_dart_ip/foundation.dart';
+import 'package:better_dart_ip/ip.dart';
 
 /// Superclass of [Ip4Address] and [Ip6Address].
 abstract class IpAddress extends SelfEncoder {
@@ -19,6 +19,7 @@ abstract class IpAddress extends SelfEncoder {
   Protocol get protocol;
 
   /// Returns string representation of the address.
+  @override
   String toString();
 
   static IpAddress fromBytes(List<int> bytes) {
@@ -29,7 +30,7 @@ abstract class IpAddress extends SelfEncoder {
         return Ip6Address.fromBytes(bytes, 0);
       default:
         throw ArgumentError.value(
-            bytes, "bytes", "invalid length (${bytes.length})");
+            bytes, 'bytes', 'invalid length (${bytes.length})');
     }
   }
 
@@ -38,12 +39,12 @@ abstract class IpAddress extends SelfEncoder {
     for (var i = 0; i < source.length; i++) {
       final c = source.substring(i, i + 1);
       switch (c) {
-        case ":":
+        case ':':
           return Ip6Address.parse(source);
-        case ".":
+        case '.':
           return Ip4Address.parse(source);
       }
     }
-    return throw ArgumentError.value(source, "source");
+    return throw ArgumentError.value(source, 'source');
   }
 }

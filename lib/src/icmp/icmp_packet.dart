@@ -1,8 +1,8 @@
-import 'package:dart_ip/foundation.dart';
-import 'package:dart_ip/ip.dart';
+import 'package:better_dart_ip/foundation.dart';
+import 'package:better_dart_ip/ip.dart';
 import 'package:dart_raw/raw.dart';
 
-const Protocol icmp = Protocol("icmp", packetFactory: _newImpPacket);
+const Protocol icmp = Protocol('icmp', packetFactory: _newImpPacket);
 
 Packet _newImpPacket() => IcmpPacket();
 

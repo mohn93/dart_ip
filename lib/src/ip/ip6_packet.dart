@@ -1,8 +1,7 @@
-import 'package:dart_ip/foundation.dart';
-import 'package:dart_ip/ip.dart';
+import 'package:better_dart_ip/foundation.dart';
+import 'package:better_dart_ip/ip.dart';
 import 'package:dart_raw/raw.dart';
 
-import 'ip6_address.dart';
 
 const Protocol ipv6 = Protocol('IPv6');
 

@@ -1,7 +1,7 @@
 import 'dart:typed_data';
 
-import 'package:dart_ip/foundation.dart';
-import 'package:dart_ip/ip.dart';
+import 'package:better_dart_ip/foundation.dart';
+import 'package:better_dart_ip/ip.dart';
 import 'package:dart_raw/raw.dart';
 
 const Protocol tcp = Protocol(
@@ -158,7 +158,7 @@ class TcpPacket extends IpPayload {
     var i = setOptionWithLength(
         optionCodeSelectiveAcknowledgement, 2 + 4 * value!.length);
     i += 2;
-    for (var item in value!) {
+    for (var item in value) {
       optionsByteData.setUint32(i, item);
       i += 4;
     }
@@ -311,7 +311,7 @@ class TcpPacket extends IpPayload {
     // ------------
     // Set checksum
     // ------------
-    int checksum = 0;
+    var checksum = 0;
     final ipPacket = parentPacket;
     final ipPacketPayloadLength = writer.length - start;
     if (ipPacket is Ip4Packet) {

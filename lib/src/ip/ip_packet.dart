@@ -1,8 +1,7 @@
-import 'package:dart_ip/foundation.dart';
-import 'package:dart_ip/ip.dart';
+import 'package:better_dart_ip/foundation.dart';
+import 'package:better_dart_ip/ip.dart';
 import 'package:dart_raw/raw.dart';
 
-import 'ip_address.dart';
 
 /// Superclass of [Ip4Packet] and [Ip6Packet].
 abstract class IpPacket<T extends IpAddress> extends Packet {
@@ -33,7 +32,7 @@ abstract class IpPacket<T extends IpAddress> extends Packet {
         result.decodeSelf(reader);
         return result;
       default:
-        throw ArgumentError("Invalid IP version number");
+        throw ArgumentError('Invalid IP version number');
     }
   }
 }

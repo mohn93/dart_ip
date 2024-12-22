@@ -1,12 +1,12 @@
-import 'package:dart_ip/foundation.dart';
-import 'package:dart_ip/ip.dart';
+import 'package:better_dart_ip/foundation.dart';
+import 'package:better_dart_ip/ip.dart';
 
 
 class Ip4Address extends IpAddress {
   static final Ip4Address any = zero;
   static final Ip4Address zero = Ip4Address.fromUint32(0);
   static final Ip4Address broadcast = Ip4Address.fromUint32(0xFFFFFFFF);
-  static final Ip4Address loopback = Ip4Address.parse("127.0.0.1");
+  static final Ip4Address loopback = Ip4Address.parse('127.0.0.1');
 
   factory Ip4Address.decode(RawReader reader) {
     return Ip4Address.fromUint32(reader.readUint32());
@@ -34,7 +34,7 @@ class Ip4Address extends IpAddress {
 
   @override
   bool get isLocalNetwork {
-    final value = this.asUint32;
+    final value = asUint32;
     final b0 = value >> 24;
     if (b0 == 10) {
       return true;
@@ -55,10 +55,10 @@ class Ip4Address extends IpAddress {
   Protocol get protocol => ipv4;
 
   @override
-  String toString() => toImmutableBytes().join(".");
+  String toString() => toImmutableBytes().join('.');
 
   static Ip4Address parse(String s) {
-    final bytes = s.split(".").map((number) => int.parse(number)).toList();
+    final bytes = s.split('.').map((number) => int.parse(number)).toList();
     if (bytes.length != 4) {
       throw ArgumentError.value(s);
     }

@@ -1,9 +1,8 @@
 import 'dart:typed_data';
 
-import 'package:dart_ip/foundation.dart';
-import 'package:dart_ip/ip.dart';
+import 'package:better_dart_ip/foundation.dart';
+import 'package:better_dart_ip/ip.dart';
 
-import 'ip6_packet.dart';
 
 class Ip6Address extends IpAddress {
   static final Ip6Address any = zero;

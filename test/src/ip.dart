@@ -1,4 +1,4 @@
-import 'package:dart_ip/ip.dart';
+import 'package:better_dart_ip/ip.dart';
 import 'package:test/test.dart';
 
 void main() {

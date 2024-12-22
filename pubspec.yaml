@@ -1,4 +1,4 @@
-name: dart_ip
+name: better_dart_ip
 version: 0.1.1
 homepage: https://github.com/mohn93/dart_ip
 description: A package for working with the IP protocol stack (IPv4, IPv6, ICMP, TCP, UDP).
